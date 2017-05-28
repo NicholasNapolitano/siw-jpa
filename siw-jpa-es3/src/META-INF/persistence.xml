@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<persistence version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="es3-unit" transaction-type="RESOURCE_LOCAL">
+		<class>model.Product</class>
+		<class>model.Provider</class>
+		<class>model.Address</class>
+		<class>model.Customer</class>
+		<class>model.Order</class>
+		<class>model.OrderLine</class>
+		<class>model.esercitazione.Artista</class>
+		<class>model.esercitazione.Curatore</class>
+		<class>model.esercitazione.Opera</class>
+		<class>model.esercitazione.Stanza</class>
+		<properties>
+			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
+			<property name="javax.persistence.jdbc.user" value="postgres" />
+			<property name="javax.persistence.jdbc.password" value="Vuototetro95" />
+			<property name="javax.persistence.jdbc.url"
+				value="jdbc:postgresql://localhost:5432/storeRepository" />
+
+			<!-- Hibernate properties -->
+			<!-- Per avere info sulle istruzioni SQL inviate al db si può impostare: -->
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" />
+
+			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
+
+			<!-- specifica che ad ogni esecuzione viene creato lo schema, cancellando 
+				il contenuto delle tabelle (molto utile in fase di sviluppo e testing) -->
+			<property name="hibernate.hbm2ddl.auto" value="create" />
+		</properties>
+	</persistence-unit>
+</persistence>
